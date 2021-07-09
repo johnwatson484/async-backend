@@ -7,19 +7,11 @@ module.exports = {
     address: process.env.AZURE_SERVICE_BUS_QUEUE,
     type: 'queue'
   },
-  topicConfig: {
+  sessionQueueConfig: {
     host: process.env.AZURE_SERVICE_BUS_HOST,
     username: process.env.AZURE_SERVICE_BUS_USERNAME,
     password: process.env.AZURE_SERVICE_BUS_PASSWORD,
-    address: process.env.AZURE_SERVICE_BUS_TOPIC,
-    type: 'topic'
-  },
-  subscriptionConfig: {
-    host: process.env.AZURE_SERVICE_BUS_HOST,
-    username: process.env.AZURE_SERVICE_BUS_USERNAME,
-    password: process.env.AZURE_SERVICE_BUS_PASSWORD,
-    address: process.env.AZURE_SERVICE_BUS_SUBSCRIPTION,
-    topic: process.env.AZURE_SERVICE_BUS_TOPIC,
-    type: 'subscription'
+    address: process.env.AZURE_SERVICE_BUS_SESSION_QUEUE,
+    type: 'queue'
   }
 }
