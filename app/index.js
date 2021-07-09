@@ -1,8 +1,8 @@
-const createServer = require('./server')
+(async function () {
+  const config = require('./config')
+  const messageAction = require('./message-action')
+  const { MessageReceiver } = require('./messaging')
 
-createServer()
-  .then(server => server.start())
-  .catch(err => {
-    console.log(err)
-    process.exit(1)
-  })
+  // send and receive from queue
+  const queueReceiver = new MessageReceiver('queue-receiver', config.queueConfig, messageAction)
+}())

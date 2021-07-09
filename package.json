@@ -1,5 +1,5 @@
 {
-  "name": "hapi-template",
+  "name": "async-backend",
   "version": "1.0.0",
   "description": "",
   "main": "app/index.js",
@@ -10,6 +10,7 @@
   "author": "John Watson",
   "license": "MIT",
   "dependencies": {
+    "@azure/service-bus": "^7.3.0",
     "@hapi/boom": "^9.1.0",
     "@hapi/crumb": "^8.0.1",
     "@hapi/good": "^9.0.1",
@@ -17,9 +18,9 @@
     "@hapi/good-squeeze": "^6.0.0",
     "@hapi/hapi": "^20.0.3",
     "@hapi/inert": "^6.0.3",
-    "joi": "^17.3.0",
     "@hapi/vision": "^6.0.1",
     "blipp": "^4.0.2",
+    "joi": "^17.3.0",
     "nunjucks": "^3.2.2"
   },
   "devDependencies": {

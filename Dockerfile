@@ -1,8 +1,6 @@
 # Development
 FROM node:14.15.4-alpine AS development
 ENV NODE_ENV development
-ARG PORT=3000
-ENV PORT ${PORT}
 EXPOSE ${PORT} 9229
 # Set global npm dependencies to be stored under the node user directory
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global

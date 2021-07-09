@@ -1,6 +1,13 @@
 version: '3.8'
 services:
-  hapi-template:
+  async-backend:
     build: .
-    image: hapi-template
-    container_name: hapi-template
+    image: async-backend
+    container_name: async-backend
+    environment:
+      AZURE_SERVICE_BUS_HOST: ${AZURE_SERVICE_BUS_HOST}
+      AZURE_SERVICE_BUS_USERNAME: ${AZURE_SERVICE_BUS_USERNAME}
+      AZURE_SERVICE_BUS_PASSWORD: ${AZURE_SERVICE_BUS_PASSWORD}
+      AZURE_SERVICE_BUS_QUEUE: ${AZURE_SERVICE_BUS_QUEUE}
+      AZURE_SERVICE_BUS_TOPIC: ${AZURE_SERVICE_BUS_TOPIC}
+      AZURE_SERVICE_BUS_SUBSCRIPTION: ${AZURE_SERVICE_BUS_SUBSCRIPTION}
