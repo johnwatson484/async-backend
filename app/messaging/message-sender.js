@@ -10,7 +10,7 @@ class MessageSender extends MessageBase {
   async sendMessage (message) {
     try {
       console.log(`${this.name} sending message`)
-      await this.sender.sendMessages({ body: message })
+      await this.sender.sendMessages(message)
     } catch (error) {
       console.error('failed to send message', error)
       throw error
