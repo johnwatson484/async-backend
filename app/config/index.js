@@ -12,6 +12,6 @@ module.exports = {
     username: process.env.AZURE_SERVICE_BUS_USERNAME,
     password: process.env.AZURE_SERVICE_BUS_PASSWORD,
     address: process.env.AZURE_SERVICE_BUS_SESSION_QUEUE,
-    type: 'queue'
+    type: 'sessionQueue'
   }
 }
