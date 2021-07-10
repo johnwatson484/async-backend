@@ -1,7 +1,7 @@
 const config = require('./config')
 const { MessageSender } = require('ffc-messaging')
 
-module.exports = async function (message) {
+module.exports = async function (message, receiver) {
   console.log('Message received:', message.body)
   const responseMessage = {
     body: { content: `Your message was ${message.body.content}` },
@@ -12,5 +12,6 @@ module.exports = async function (message) {
   }
   const sessionQueueSender = new MessageSender(config.sessionQueueConfig)
   await sessionQueueSender.sendMessage(responseMessage)
+  await receiver.completeMessage(message)
   await sessionQueueSender.closeConnection()
 }
