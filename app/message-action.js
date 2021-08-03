@@ -4,7 +4,7 @@ const cache = require('./cache')
 
 module.exports = async function (message, receiver) {
   console.log('Message received:', message.body)
-  await cache.set(message.correlationId, { content: message.body.content })
+  await cache.update(message.correlationId, { content: message.body.content })
   const cacheValue = await cache.get(message.correlationId)
 
   if (!cacheValue.isReady) {
@@ -24,4 +24,5 @@ module.exports = async function (message, receiver) {
   await sessionQueueSender.sendMessage(responseMessage)
   await receiver.completeMessage(message)
   await sessionQueueSender.closeConnection()
+  console.log('Response sent')
 }

@@ -16,7 +16,7 @@ const get = async (key) => {
 }
 
 const set = async (key, value) => {
-  await cache.set(key, value)
+  await cache.set(key, value, 0)
 }
 
 const update = async (key, object) => {
