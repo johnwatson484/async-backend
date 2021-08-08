@@ -23,6 +23,7 @@ const update = async (key, object) => {
   const existing = await get(key)
   hoek.merge(existing, object, { mergeArrays: false })
   await set(key, existing)
+  return existing
 }
 
 const clear = async (key) => {
